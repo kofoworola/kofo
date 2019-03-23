@@ -1,0 +1,26 @@
+.site-menu{
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  top: 40%;
+  .menu-link{
+    width: 200px;
+    a{
+      padding: 20px 30px;
+      display: block;
+      font-family: $font-accent;
+      color: white;
+      text-align: center;
+      border: solid $color-border-grey 1px;
+      background-color: black;
+      font-size: large;
+      font-weight: bold;
+      &:hover{
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
