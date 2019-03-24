@@ -4,8 +4,45 @@
   padding: 25px 30px;
   box-sizing: border-box;
   .content{
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background: url(../assets/backgrounds/potrait_back.png) top right/ contain no-repeat, url(../assets/backgrounds/dot.png) repeat 65% 65% , linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    .logo{
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      margin-bottom: 50px;
+      img{
+        height: 90%;
+        width: auto;
+      }
+    }
+
+    .home-content__intro{
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      letter-spacing: 1.2em;
+      font-family: 'Expletus Sans', cursive;;
+    }
+    .home-content__about{
+      font-size: 1.8em;
+      font-family: $font-secondary;
+    }
+  }
+  .home__social{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    a{
+      margin-right: 20px;
+      color: white;
+      text-decoration: none;
+    }
   }
 }

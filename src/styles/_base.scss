@@ -1,7 +1,17 @@
 body{
   margin: 0 !important;
+  color: white;
+  font-family: $font-primary;
 }
 
 #app{
   background-color: $color-background-grey;
+}
+
+.inline{
+  display: inline;
+}
+
+div{
+  box-sizing: border-box;
 }
