@@ -1,12 +1,12 @@
 <template>
     <div class="site-menu">
         <div class="menu-link">
-            <a>
+            <a href="#">
                 About Me
             </a>
         </div>
         <div class="menu-link">
-            <a>
+            <a href="#">
                 Works
             </a>
         </div>

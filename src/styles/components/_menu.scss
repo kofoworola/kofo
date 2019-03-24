@@ -1,24 +1,50 @@
-.site-menu{
+.site-menu {
   position: fixed;
   display: flex;
   justify-content: space-between;
   left: 0;
   right: 0;
   top: 40%;
-  .menu-link{
+
+  .menu-link {
     width: 200px;
+    display: block;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-family: $font-accent;
+    color: white;
+    text-align: center;
+    border: solid $color-border-grey 1px;
+    background-size: 200% 100%;
+    font-size: large;
+    font-weight: bold;
+    transition: all 0.3s;
+
+    &:first-child {
+      background-image: linear-gradient(to right, white 50%, black 50%);
+      background-position-x: 100%;
+
+      &:hover {
+        background-position-x: 0;
+      }
+    }
+
+    &:last-child {
+      background-image: linear-gradient(to left, white 50%, black 50%);
+      background-position-x: 0;
+
+      &:hover {
+        background-position: 100%;
+      }
+    }
     a{
-      padding: 20px 30px;
-      display: block;
-      font-family: $font-accent;
       color: white;
-      text-align: center;
-      border: solid $color-border-grey 1px;
-      background-color: black;
-      font-size: large;
-      font-weight: bold;
-      &:hover{
-        background-color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    &:hover{
+      a{
         color: black;
       }
     }
