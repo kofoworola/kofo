@@ -23,7 +23,7 @@
     transition: all 0.3s;
 
     &:first-child {
-      background-image: linear-gradient(to right, white 50%, black 50%);
+      background-image: linear-gradient(to right, white 50%, #0f0f0f 50%);
       background-position-x: 100%;
 
       &:hover {
@@ -32,7 +32,7 @@
     }
 
     &:last-child {
-      background-image: linear-gradient(to left, white 50%, black 50%);
+      background-image: linear-gradient(to left, white 50%, #0f0f0f 50%);
       background-position-x: 0;
 
       &:hover {

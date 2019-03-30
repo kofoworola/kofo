@@ -1,0 +1,17 @@
+@keyframes typing {
+  from,70%,to {
+    width: 100%
+  }
+  30% {
+    width: 0
+  }
+}
+
+@keyframes typing-caret {
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: white;
+  }
+}

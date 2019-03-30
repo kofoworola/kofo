@@ -1,14 +1,14 @@
 <template>
     <div class="site-menu">
         <div class="menu-link">
-            <a href="#">
+            <router-link to="/about">
                 About Me
-            </a>
+            </router-link>
         </div>
         <div class="menu-link">
-            <a href="#">
+            <router-link to="/works">
                 Works
-            </a>
+            </router-link>
         </div>
     </div>
 </template>

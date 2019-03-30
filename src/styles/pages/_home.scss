@@ -7,7 +7,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(../assets/backgrounds/potrait_back.png) top right/ contain no-repeat, url(../assets/backgrounds/dot.png) repeat 65% 65% , linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    background: #0f0f0f url(../assets/backgrounds/dot.png) repeat 65% 65% ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,6 +33,23 @@
     .home-content__about{
       font-size: 1.8em;
       font-family: $font-secondary;
+    }
+    .typing{
+      font-size: 1.8em;
+      font-family: $font-secondary;
+      text-align: center;
+      text-decoration: underline;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 0.15em solid white ;
+      margin: 0 auto;
+      animation: typing 4s steps(15, end) infinite, typing-caret .5s step-end infinite;
+    }
+    .triangle-image{
+      margin-top: auto;
+      img{
+        margin-bottom: -5px;
+      }
     }
   }
   .home__social{
