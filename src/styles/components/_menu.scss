@@ -11,20 +11,16 @@
     width: 200px;
     display: block;
     box-sizing: border-box;
-    padding: 20px 30px;
     text-decoration: none;
-    font-family: $font-accent;
-    color: white;
     text-align: center;
     border: solid $color-border-grey 1px;
     background-size: 200% 100%;
-    font-size: large;
-    font-weight: bold;
     transition: all 0.3s;
 
     &:first-child {
-      background-image: linear-gradient(to right, white 50%, #0f0f0f 50%);
+      background-image: linear-gradient(to right, white 50%, black 50%);
       background-position-x: 100%;
+      animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
       &:hover {
         background-position-x: 0;
@@ -32,22 +28,71 @@
     }
 
     &:last-child {
-      background-image: linear-gradient(to left, white 50%, #0f0f0f 50%);
+      background-image: linear-gradient(to left, white 50%, black 50%);
       background-position-x: 0;
+      animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
       &:hover {
         background-position: 100%;
       }
     }
-    a{
+
+    a {
+      display: block;
+      box-sizing: border-box;
+      padding: 20px 30px;
+      font-family: $font-accent;
+      text-align: center;
+      font-size: large;
+      font-weight: bold;
       color: white;
       text-decoration: none;
       transition: color 0.3s;
     }
-    &:hover{
-      a{
+
+    &:hover {
+      a {
         color: black;
       }
     }
   }
+}
+
+.top-menu {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  .top-menu__home {
+    display: inline-block;
+    height: 40px;
+    margin-right: 110px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    &::after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      width: 60px;
+      height: 1px;
+      top: 50%;
+      margin-left: 20px;
+    }
+  }
+
+  .top-menu__link {
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: $font-accent;
+    color: white;
+    text-decoration: none;
+  }
+
 }

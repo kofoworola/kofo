@@ -3,14 +3,20 @@
 //Vendors
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
+//Helpers
+@import "helpers";
+
 @import "variables";
 @import "base";
 
 //Animations
 @import "animations";
+@import "transitions";
 
 //Components
 @import "components/menu";
 
 //Pages
-@import "pages/home";
+@import "pages/home",
+"pages/works",
+"pages/about";

@@ -15,3 +15,28 @@
     border-color: white;
   }
 }
+
+
+@keyframes slide-in-left {
+  0% {
+    @include prefix(transform, translateX(-100px), webkit)
+
+  }
+  100% {
+    @include prefix(transform, translateX(0), webkit)
+
+  }
+}
+
+
+@keyframes slide-in-right {
+  0% {
+    @include prefix(transform, translateX(100px), webkit)
+
+  }
+  100% {
+    @include prefix(transform, translateX(0), webkit)
+
+  }
+}
+
