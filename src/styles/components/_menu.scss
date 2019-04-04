@@ -65,6 +65,7 @@
   top: 20px;
   left: 20px;
   right: 20px;
+  z-index: 9999;
 
   .top-menu__home {
     display: inline-block;
@@ -86,7 +87,6 @@
       margin-left: 20px;
     }
   }
-
   .top-menu__link {
     font-size: 1.3em;
     font-weight: bold;
@@ -95,4 +95,9 @@
     text-decoration: none;
   }
 
+  &.white{
+    .top-menu__link{
+      color:black;
+    }
+  }
 }

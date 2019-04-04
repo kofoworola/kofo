@@ -1,6 +1,15 @@
 .works {
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   padding: 30px;
-  background-color: black;
-
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  .portfolio-item{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="page home">
         <div class="content">
             <div class="logo">
                 <img src="../assets/logo.png"/>
@@ -8,7 +8,6 @@
             <div class="home-content__about">A Software Developer And</div>
             <div>
                 <p class="typing">Part Time Goof</p>
-
             </div>
             <div class="triangle-image">
                 <img src="../assets/backgrounds/triangle.png"/>
