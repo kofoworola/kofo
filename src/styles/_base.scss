@@ -5,8 +5,9 @@ body{
 }
 
 #app{
-  background-color: $color-background-grey;
+  background-color: black;
   overflow: hidden;
+  height: 100vh;
   .page{
     position: absolute;
     top: 0;
@@ -21,4 +22,30 @@ body{
 
 div{
   box-sizing: border-box;
+}
+
+.animate-on-entry{
+  visibility: hidden;
+  animation-delay: $page-transition-time !important;
+  &.show{
+    visibility: visible;
+  }
+}
+
+.loading{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  overflow: hidden;
+  background-color: white;
+  .holder{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

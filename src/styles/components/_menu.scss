@@ -4,7 +4,7 @@
   justify-content: space-between;
   left: 0;
   right: 0;
-  top: 45%;
+  top: 40%;
   z-index: 9999;
 
   .menu-link {
@@ -41,7 +41,7 @@
       display: block;
       box-sizing: border-box;
       padding: 20px 30px;
-      font-family: $font-accent;
+      font-family: $font-secondary;
       text-align: center;
       font-size: large;
       font-weight: bold;
@@ -90,7 +90,7 @@
   .top-menu__link {
     font-size: 1.3em;
     font-weight: bold;
-    font-family: $font-accent;
+    font-family: $font-secondary;
     color: white;
     text-decoration: none;
   }

@@ -1,13 +1,13 @@
 <template>
     <div class="page home">
         <div class="content">
-            <div class="logo">
+            <div class="logo animate-on-entry">
                 <img src="../assets/logo.png"/>
             </div>
             <div class="home-content__intro">KOFO OKESOLA</div>
-            <div class="home-content__about">A Software Developer And</div>
+            <div class="home-content__about animate-on-entry">A Software Developer And</div>
             <div>
-                <p class="typing">Part Time Goof</p>
+                <p class="typing animate-on-entry">Part Time Goof</p>
             </div>
             <div class="triangle-image">
                 <img src="../assets/backgrounds/triangle.png"/>

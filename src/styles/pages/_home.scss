@@ -19,6 +19,7 @@
       align-items: center;
       justify-items: center;
       margin-bottom: 50px;
+      animation: slide-fade-in-up $entry-animation-time $animation-speed-curve;
       img{
         height: 90%;
         width: auto;
@@ -34,6 +35,7 @@
     .home-content__about{
       font-size: 1.8em;
       font-family: $font-secondary;
+      animation: fade-in $entry-animation-time $animation-speed-curve;
     }
     .typing{
       font-size: 1.8em;

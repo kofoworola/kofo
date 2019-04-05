@@ -1,21 +1,15 @@
 <template>
     <div id="app">
-        <!--<transition name="fade">-->
-        <site-menu v-if="route === 'home'"></site-menu>
-        <div class="top-menu" v-else :class="{ white: route === 'works'}">
-            <router-link to="/" class="top-menu__home">
-                <img src="./assets/logo.png"/>
-            </router-link>
-            <router-link to="/about" class="top-menu__link" v-if="route === 'works'">
-                About
-            </router-link>
-            <router-link to="/works" class="top-menu__link" v-if="route === 'about'">
-                Works
-            </router-link>
-        </div>
-        <!--</transition>-->
-        <transition name="works-transition">
+        <site-menu></site-menu>
+        <transition name="site-transition" v-on:after-enter="animateItems">
             <router-view></router-view>
+        </transition>
+        <transition name="loader-transition">
+            <div class="loading" v-if="loading">
+                <div class="holder">
+                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png"/>
+                </div>
+            </div>
         </transition>
     </div>
 </template>
@@ -25,8 +19,24 @@
     export default {
         components: {SiteMenu},
         computed: {
+            loading() {
+                return this.$store.state.loading;
+            },
             route() {
                 return this.$route.name;
+            }
+        },
+        mounted() {
+            console.log(this.loading);
+            document.querySelectorAll(".animate-on-entry").forEach(function (item) {
+                item.classList.remove("animate-on-entry");
+            });
+        },
+        methods: {
+            animateItems(e) {
+                document.querySelectorAll(".animate-on-entry").forEach(function (item) {
+                    item.classList.add("show");
+                })
             }
         }
     }
