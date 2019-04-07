@@ -1,18 +1,32 @@
 <template>
     <!--<transition name="works-transition">-->
     <div class="page works">
-        <div class="portfolio-item">
+        <div class="portfolio-item" v-for="project in projects" v-if="selected_project_id === project._id">
             <div class="section-content">
                 <h4 class="portfolio-item__title">
-                    Lorem Ipsum Dolor bitch
+                    {{ project.title }}
                 </h4>
-                <p class="portfolio-item__excerpt">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                </p>
+                <div class="portfolio-item__excerpt">
+                    <span>+</span>
+                    <p>
+                        {{ getMetaField("excerpt",project).value }}
+                    </p>
+                </div>
             </div>
-            <div class="section-image">
-                <img src="https://images.unsplash.com/photo-1504492729478-4ea346b648ae?dpr=1&auto=compress,format&fit=crop&w=376&h=502&q=80&cs=tinysrgb&crop=">
+            <div class="section-image-container">
+                <div class="section-image"
+                     :style="{ backgroundImage: 'url(https://cosmic-s3.imgix.net/'+getMetaField('image_1',project).value + ')'}">
+                </div>
             </div>
+        </div>
+        <div class="portfolio-menu">
+            <ul>
+                <li><a href="#">Item</a></li>
+                <li><a href="#" class="active">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+            </ul>
         </div>
     </div>
     <!--</transition>-->
@@ -27,12 +41,13 @@
         data() {
             return {
                 projects: [],
+                selected_project_id: "",
+                project_ids: [],
             }
         },
         beforeRouteEnter(to, from, next) {
             store.commit('setLoading', true);
             setTimeout(client.getAllProjects, 700, projects => {
-                console.log("called");
                 next(vm => vm.setProjects(projects));
                 store.commit('setLoading', false);
             });
@@ -40,9 +55,18 @@
         methods: {
             setProjects(projects) {
                 this.projects = projects;
+                this.project_ids = _.map(projects, item => {
+                    return item._id;
+                });
+                this.selected_project_id = _.first(this.project_ids);
             },
-            fetchProjects(callback) {
-
+            getMetaField(key, project) {
+                return _.find(project.metafields, item => {
+                    return item.key === key;
+                })
+            },
+            handleScroll() {
+                console.log(window.scrollY)
             }
         }
     }

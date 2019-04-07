@@ -2,6 +2,7 @@ let client = {
     getAllProjects(callback){
         let query = `{
                     objectsByType(bucket_slug: "kofo-site", type_slug: "projects") {
+                        _id
                         title
                         metafields {
                             key

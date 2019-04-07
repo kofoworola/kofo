@@ -27,7 +27,6 @@
             }
         },
         mounted() {
-            console.log(this.loading);
             document.querySelectorAll(".animate-on-entry").forEach(function (item) {
                 item.classList.remove("animate-on-entry");
             });
