@@ -2,9 +2,10 @@
     <!--<transition name="works-transition">-->
     <div class="page works">
         <div class="portfolio-item" v-for="project in projects" v-if="selected_project_id === project._id">
-            <div class="section-content">
+            <a class="section-content" href="#">
                 <h4 class="portfolio-item__title">
                     {{ project.title }}
+                    <div class="portfolio-item__title--underline"></div>
                 </h4>
                 <div class="portfolio-item__excerpt">
                     <span>+</span>
@@ -12,7 +13,7 @@
                         {{ getMetaField("excerpt",project).value }}
                     </p>
                 </div>
-            </div>
+            </a>
             <div class="section-image-container">
                 <div class="section-image"
                      :style="{ backgroundImage: 'url(https://cosmic-s3.imgix.net/'+getMetaField('image_1',project).value + ')'}">
