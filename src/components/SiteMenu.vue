@@ -12,7 +12,7 @@
                 </router-link>
             </div>
         </div>
-        <div class="top-menu" v-else :class="{ white: route === 'works'}">
+        <div class="top-menu" v-else>
             <router-link to="/" class="top-menu__home">
                 <img src="../assets/logo.png"/>
             </router-link>

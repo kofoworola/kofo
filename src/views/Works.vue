@@ -4,19 +4,14 @@
         <div class="portfolio-item" v-for="project in projects" v-if="selected_project_id === project._id">
             <a class="section-content" href="#">
                 <h4 class="portfolio-item__title">
-                    {{ project.title }}
-                    <div class="portfolio-item__title--underline"></div>
+                    {{ project.title }}: {{ getMetaField("excerpt",project).value }}
+                    <!--<div class="portfolio-item__title&#45;&#45;underline"></div>-->
                 </h4>
-                <div class="portfolio-item__excerpt">
-                    <span>+</span>
-                    <p>
-                        {{ getMetaField("excerpt",project).value }}
-                    </p>
-                </div>
             </a>
             <div class="section-image-container">
                 <div class="section-image"
                      :style="{ backgroundImage: 'url(https://cosmic-s3.imgix.net/'+getMetaField('image_1',project).value + ')'}">
+                    <div class="overlay"></div>
                 </div>
             </div>
         </div>
