@@ -1,31 +1,34 @@
 <template>
-    <!--<transition name="works-transition">-->
     <div class="page works">
-        <div class="portfolio-item" v-for="project in projects" v-if="selected_project_id === project._id">
-            <a class="section-content" href="#">
-                <h4 class="portfolio-item__title">
-                    {{ project.title }}: {{ getMetaField("excerpt",project).value }}
-                    <!--<div class="portfolio-item__title&#45;&#45;underline"></div>-->
-                </h4>
-            </a>
-            <div class="section-image-container">
-                <div class="section-image"
-                     :style="{ backgroundImage: 'url(https://cosmic-s3.imgix.net/'+getMetaField('image_1',project).value + ')'}">
-                    <div class="overlay"></div>
+        <transition name="works-transition" appear
+                    mode="out-in">
+            <div class="portfolio-item" v-for="project in projects"
+                 v-if="selected_project_id === project._id" :key="project._id">
+                <a class="section-content" href="#">
+                    <h4 class="portfolio-item__title">
+                        {{ project.title }}: {{ getMetaField("excerpt",project).value }}
+                    </h4>
+                </a>
+                <div class="section-image-container">
+                    <div class="section-image"
+                         :style="{ backgroundImage: 'url(https://cosmic-s3.imgix.net/'+getMetaField('image_1',project).value + ')'}">
+                        <div class="overlay"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </transition>
         <div class="portfolio-menu">
             <ul>
-                <li><a href="#">Item</a></li>
-                <li><a href="#" class="active">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
+                <li v-for="project in projects">
+                    <a href="#" :class="{active: project._id === selected_project_id}"
+                       @click="selected_project_id = project._id">{{ project.title }}</a>
+                </li>
             </ul>
+            <div class="portfolio-menu__indicator">
+                <div class="current-indicator" v-bind:style="indicatorStyle"></div>
+            </div>
         </div>
     </div>
-    <!--</transition>-->
 </template>
 
 <script>
@@ -40,6 +43,18 @@
                 selected_project_id: "",
                 project_ids: [],
             }
+        },
+        computed: {
+          indicatorStyle(){
+              let step = 100 / this.projects.length;
+              let height = (step).toString() + "%";
+              let position = _.findIndex(this.projects, item => {
+                 return item._id === this.selected_project_id;
+              });
+              console.log(position);
+              let top = `calc(${position * step}%)`;
+              return { height, top };
+          }
         },
         beforeRouteEnter(to, from, next) {
             store.commit('setLoading', true);
@@ -60,9 +75,6 @@
                 return _.find(project.metafields, item => {
                     return item.key === key;
                 })
-            },
-            handleScroll() {
-                console.log(window.scrollY)
             }
         }
     }

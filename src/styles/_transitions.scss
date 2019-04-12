@@ -2,41 +2,74 @@
 .fade-enter-active, .fade-leave-active {
   transition: opacity $page-transition-time;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 
-.site-transition-enter-active, .site-transition-leave-active{
-  transition: all $page-transition-time cubic-bezier(.82,.01,.47,.93);
+
+/*
+********SITE TRANSITION*******
+ */
+.site-transition-enter-active, .site-transition-leave-active {
+  transition: all $page-transition-time cubic-bezier(.82, .01, .47, .93);
 }
 
-.site-transition-enter{
-    transform: translateY(100%);
+.site-transition-enter {
+  transform: translateY(100%);
 }
 
-.site-transition-leave-to{
+.site-transition-leave-to {
   opacity: 0;
 }
 
-.loader-transition-enter-active, .loader-transition-leave-active{
-  transition: all $page-transition-time cubic-bezier(.82,.01,.47,.93);
-  img{
-    transition: all $page-transition-time cubic-bezier(.82,.01,.47,.93);
+
+/*
+********LOADER TRANSITION*******
+ */
+.loader-transition-enter-active, .loader-transition-leave-active {
+  transition: all $page-transition-time cubic-bezier(.82, .01, .47, .93);
+
+  img {
+    transition: all $page-transition-time cubic-bezier(.82, .01, .47, .93);
   }
 }
 
-.loader-transition-enter{
+.loader-transition-enter {
   height: 0;
   background-color: black;
-  img{
+
+  img {
     transform: scale(0.7);
   }
 }
 
-.loader-transition-leave-to{
+.loader-transition-leave-to {
   background-color: black;
   height: 0;
-  img{
+
+  img {
     transform: scale(0.7);
+  }
+}
+
+/*
+********WORKS TRANSITION*******
+ */
+
+.works-transition-enter-active, .works-transition-leave-active {
+  transition: all 0.8s;
+  * {
+    transition: all 0.8s cubic-bezier(1,-0.6,.34,1.54);
+  }
+}
+
+.works-transition-enter, .works-transition-leave-to {
+  opacity: 0;
+  .section-content{
+    transform: translateX(-150%);
+  }
+  .section-image-container{
+    transform: translateY(150%);
   }
 }
