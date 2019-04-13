@@ -1,7 +1,7 @@
 .home{
   width: 100vw;
   height: 100vh;
-  //padding: 25px 30px;
+  overflow: hidden;
   box-sizing: border-box;
   background-color: $color-background-grey;
   .content{

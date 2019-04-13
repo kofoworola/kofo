@@ -1,7 +1,7 @@
 .works {
   height: 100vh;
   width: 100vw;
-  background-color: #060606;
+  background-color: #222222;
   color: white;
 
   .portfolio-item {
@@ -56,6 +56,9 @@
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
+        //animation: image-animation 20s linear 2s infinite;
+        //box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        animation: float 10s ease-in-out infinite;
         .overlay{
           height: 100%;
           background-color: rgba(52, 52, 52, 0.61);
@@ -134,5 +137,38 @@
     right: 0;
     left: unset;
     width: 0;
+  }
+}
+
+/*
+**********PAGE SPECIFIC ANIMATIONS*********
+ */
+@keyframes image-animation {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(10px);
+  }
+  66% {
+    transform: translate(-10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translateY(0px);
+  }
+  50% {
+    box-shadow: 0 25px 20px 0px rgba(0,0,0,0.1);
+    transform: translateY(-30px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translateY(0px);
   }
 }

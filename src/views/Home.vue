@@ -1,11 +1,11 @@
 <template>
     <div class="page home">
         <div class="content">
-            <div class="logo animate-on-entry">
+            <div class="logo" v-if="!transition">
                 <img src="../assets/logo.png"/>
             </div>
             <div class="home-content__intro">KOFO OKESOLA</div>
-            <div class="home-content__about animate-on-entry">A Software Developer And</div>
+            <div class="home-content__about" v-if="!transition">A Software Developer And</div>
             <div>
                 <p class="typing animate-on-entry">Part Time Goof</p>
             </div>
@@ -25,6 +25,11 @@
 
     export default {
         name: 'home',
-        components: {}
+        components: {},
+        computed: {
+            transition() {
+                return this.$store.state.transition;
+            }
+        }
     }
 </script>

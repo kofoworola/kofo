@@ -80,7 +80,7 @@
 .works-transition-enter-active, .works-transition-leave-active {
   transition: all 0.8s;
   * {
-    transition: all 0.8s cubic-bezier(1,-0.6,.34,1.54);
+    transition: all 0.8s cubic-bezier(1,-0.6,.08,1.42);
   }
 }
 

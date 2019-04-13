@@ -42,7 +42,7 @@
 
 @keyframes slide-fade-in-up{
   0%{
-    @include prefix(transform,translateY(-200px),webkit);
+    @include prefix(transform,translateY(-150px),webkit);
     opacity: 0.4;
   }
   100%{

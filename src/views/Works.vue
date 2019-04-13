@@ -11,7 +11,7 @@
                 </a>
                 <div class="section-image-container">
                     <div class="section-image"
-                         :style="{ backgroundImage: 'url(https://cosmic-s3.imgix.net/'+getMetaField('image_1',project).value + ')'}">
+                         :style="{ backgroundImage: `url(https://cosmic-s3.imgix.net/${getMetaField('image',project).value})`}">
                         <div class="overlay"></div>
                     </div>
                 </div>
@@ -66,6 +66,10 @@
                 next(vm => vm.setProjects(projects));
                 store.commit('setLoading', false);
             });
+        },
+        beforeRouteLeave(to,from,next){
+            this.$store.commit('setTransition',true);
+            setTimeout(next,800);
         },
         methods: {
             setProjects(projects) {

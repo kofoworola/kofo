@@ -84,6 +84,7 @@
       margin-left: 20px;
     }
   }
+
   .top-menu__link {
     font-size: 1.3em;
     font-weight: bold;
@@ -92,9 +93,9 @@
     text-decoration: none;
   }
 
-  &.white{
-    .top-menu__link{
-      color:black;
+  &.white {
+    .top-menu__link {
+      color: black;
     }
   }
 }
