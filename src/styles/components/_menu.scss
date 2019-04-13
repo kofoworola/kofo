@@ -15,12 +15,10 @@
     text-align: center;
     border: solid $color-border-grey 1px;
     background-size: 200% 100%;
-    transition: all 0.3s;
 
     &:first-child {
       background-image: linear-gradient(to right, white 50%, black 50%);
       background-position-x: 100%;
-      animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
       &:hover {
         background-position-x: 0;
@@ -30,7 +28,6 @@
     &:last-child {
       background-image: linear-gradient(to left, white 50%, black 50%);
       background-position-x: 0;
-      animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
       &:hover {
         background-position: 100%;

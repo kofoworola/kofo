@@ -1,6 +1,6 @@
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity $page-transition-time;
+  transition: opacity 0.8s;
 }
 
 .fade-enter, .fade-leave-to {
@@ -21,6 +21,26 @@
 
 .site-transition-leave-to {
   opacity: 0;
+}
+
+/*
+********HOME MENU TRANSITION*******
+ */
+.home-menu-enter-active, .home-menu-leave-active{
+  transition: opacity 0.7s;
+  *{
+    transition: all 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  }
+}
+
+.home-menu-enter, .home-menu-leave-to{
+  opacity: 0;
+  .menu-link:first-child{
+    transform: translateX(-200px);
+  }
+  .menu-link:last-child{
+    transform: translateX(200px);
+  }
 }
 
 

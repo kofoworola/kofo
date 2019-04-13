@@ -1,18 +1,20 @@
 <template>
     <div>
-        <div class="site-menu" v-if="route === 'home'">
-            <div class="menu-link">
-                <router-link to="/about">
-                    About Me
-                </router-link>
+        <transition name="home-menu" appear>
+            <div class="site-menu" v-show="route === 'home'">
+                <div class="menu-link">
+                    <router-link to="/about">
+                        About Me
+                    </router-link>
+                </div>
+                <div class="menu-link">
+                    <router-link to="/works">
+                        Works
+                    </router-link>
+                </div>
             </div>
-            <div class="menu-link">
-                <router-link to="/works">
-                    Works
-                </router-link>
-            </div>
-        </div>
-        <div class="top-menu" v-else>
+        </transition>
+        <div class="top-menu" v-show="route !== 'home'">
             <router-link to="/" class="top-menu__home">
                 <img src="../assets/logo.png"/>
             </router-link>
@@ -30,7 +32,7 @@
     export default {
         name: "SiteMenu",
         computed: {
-            route(){
+            route() {
                 return this.$route.name;
             }
         }

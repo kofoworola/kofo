@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <site-menu></site-menu>
-        <transition name="site-transition" v-on:after-enter="animateItems">
+        <transition name="site-transition"
+                    v-on:after-enter="transitionDone"
+                    v-on:before-enter="beforeTransition">
             <router-view></router-view>
         </transition>
         <transition name="loader-transition">
@@ -32,10 +34,14 @@
             });
         },
         methods: {
-            animateItems(e) {
+            transitionDone(e) {
+                this.$store.commit('setTransition', false);
                 document.querySelectorAll(".animate-on-entry").forEach(function (item) {
                     item.classList.add("show");
                 })
+            },
+            beforeTransition(e) {
+                this.$store.commit('setTransition', true);
             }
         }
     }
