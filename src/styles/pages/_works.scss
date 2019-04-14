@@ -56,8 +56,6 @@
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
-        //animation: image-animation 20s linear 2s infinite;
-        //box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
         animation: float 10s ease-in-out infinite;
         .overlay{
           height: 100%;
@@ -85,7 +83,7 @@
         a {
           font-size: 1em;
           font-weight: lighter;
-          color: rgba(42, 42, 42, 0.99);
+          color: rgba(61, 61, 61, 0.99);
           transition: all 0.7s;
           padding-bottom: 30px;
           text-decoration: none;
