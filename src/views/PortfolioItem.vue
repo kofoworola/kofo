@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="work__content">
-            <div v-html="project.content"></div>
+            <div v-html="project.metadata.content"></div>
         </div>
     </div>
 </template>
