@@ -18,7 +18,7 @@
             <router-link to="/" class="top-menu__home">
                 <img src="../assets/logo.png"/>
             </router-link>
-            <router-link to="/about" class="top-menu__link" v-if="route === 'works'">
+            <router-link to="/about" class="top-menu__link" v-if="route === 'works' || route === 'work'">
                 About
             </router-link>
             <router-link to="/works" class="top-menu__link" v-if="route === 'about'">

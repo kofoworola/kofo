@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Work from './views/Works'
 import About from './views/About'
+import PortfolioItem from "./views/PortfolioItem";
 
 Vue.use(Router);
 
@@ -25,5 +26,10 @@ export default new Router({
       name: 'about',
       component: About
     },
+    {
+      path: '/work/:slug',
+      name: 'work',
+      component: PortfolioItem,
+    }
   ]
 })

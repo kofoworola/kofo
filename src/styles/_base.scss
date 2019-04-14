@@ -6,8 +6,7 @@ body{
 
 #app{
   background-color: black;
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: hidden;
   .page{
     position: absolute;
     top: 0;
