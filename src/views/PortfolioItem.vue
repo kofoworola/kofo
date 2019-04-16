@@ -1,15 +1,16 @@
 <template>
     <div class="work" v-if="project !== null">
-        <div class="banner-section"
-             :style="{ backgroundImage: `url(${project.metadata.image.imgix_url})`}">
-            <div class="overlay"></div>
-            <div class="banner__content">
-                <h4 class="banner__content__title"><span>Project: </span> {{ project.title }}</h4>
+        <div class="banner-section">
+            <div class="banner-section__image"
+                 :style="{ backgroundImage: `url(${project.metadata.image.imgix_url})`}"></div>
+            <div class="banner-section__content animate-on-entry">
+                <h4 class="banner__content__title animate-on-entry"><span>Project: </span> {{ project.title }}</h4>
+                <p class="banner__content__excerpt">{{ project.metadata.excerpt}}</p>
                 <a :href="project.metadata.url" target="_blank" class="project-link">Visit Project</a>
             </div>
         </div>
         <div class="work__content">
-            <div v-html="project.metadata.content"></div>
+            <div v-html="content_html"></div>
         </div>
     </div>
 </template>
@@ -18,13 +19,15 @@
     import store from '../store';
     import client from '../apiclient';
     import helpers from '../mixins/cosmichelpers';
+    let showdown = require('showdown');
 
     export default {
         name: "PortfolioItem",
         mixins: [helpers],
         data() {
             return {
-                project: null
+                project: null,
+                content_html: "",
             }
         },
         mounted(){
@@ -39,6 +42,7 @@
         methods: {
             setProject(project) {
                 this.project = project;
+                this.content_html = (new showdown.Converter()).makeHtml(project.metadata.content);
             },
         }
     }

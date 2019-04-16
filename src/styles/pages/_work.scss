@@ -1,43 +1,58 @@
-.work{
+.work {
   min-height: 100vh;
   background-color: $color-dark-grey;
-  .banner-section{
+
+  .banner-section {
     width: 100vw;
     height: 80vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
-    filter: grayscale(100%);
-    .overlay{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .banner-section__image {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: black;
-      opacity: 0.6;
-      width: 100%;
       height: 100%;
-      z-index: -9;
+      width: 100%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: grayscale(100%) brightness(50%) blur(3px);
     }
-    .banner__content{
-      width: 100%;
-      height: 100%;
+
+    .banner-section__content {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 0 30px;
-      .banner__content__title{
+      background-color: black;
+      position: relative;
+      padding: 50px;
+      margin-left: 20px;
+      animation: fade-in 0.8s;
+
+      .banner__content__title {
         font-size: 2em;
         font-family: $font-secondary;
         letter-spacing: 0.2em;
         font-weight: bold;
-        span{
+        margin: 0;
+        animation: slide-fade-in-left 0.8s;
+
+        span {
           font-family: $font-primary;
         }
       }
-      .project-link{
+
+      .banner__content__excerpt {
+        font-size: 1.3em;
+        margin: 40px 0;
+      }
+
+      .project-link {
         padding: 15px;
         min-width: 200px;
         border: solid 2px white;
@@ -47,7 +62,8 @@
         font-family: $font-primary;
         text-align: center;
         transition: all 0.8s;
-        &:hover{
+
+        &:hover {
           background-color: white;
           color: black;
         }
@@ -55,15 +71,30 @@
     }
 
   }
-  .work__content{
+
+  .work__content {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     color: white !important;
     font-family: $font-primary !important;
-    p{
-      font-size: 1.5em;
+    padding: 30px;
+
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+      font-family: $font-secondary;
+      margin-top: 50px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      font-size: 1.3em;
       line-height: 2em;
+      display: block;
     }
   }
 }

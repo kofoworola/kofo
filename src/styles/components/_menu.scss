@@ -56,13 +56,18 @@
 }
 
 .top-menu {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   position: fixed;
   top: 20px;
   left: 20px;
-  right: 20px;
   z-index: 9999;
+  transition: all 0.8s;
+
+  &.item-page{
+    left: unset;
+    right: 20px;
+  }
 
   .top-menu__home {
     display: inline-block;

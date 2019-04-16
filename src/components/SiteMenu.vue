@@ -14,7 +14,10 @@
                 </div>
             </div>
         </transition>
-        <div class="top-menu" v-show="route !== 'home'">
+
+
+        <div class="top-menu" v-show="route !== 'home'"
+             :class="{'item-page': route === 'work'}">
             <router-link to="/" class="top-menu__home">
                 <img src="../assets/logo.png"/>
             </router-link>
@@ -34,6 +37,9 @@
         computed: {
             route() {
                 return this.$route.name;
+            },
+            transition() {
+                return this.$store.state.transition;
             }
         }
     }
