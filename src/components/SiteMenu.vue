@@ -15,7 +15,16 @@
             </div>
         </transition>
 
-
+        <div class="back-link" v-if="route === 'work'">
+            <router-link to="/works">
+                <div class="back-button">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                Back to works
+            </router-link>
+        </div>
         <div class="top-menu" v-show="route !== 'home'"
              :class="{'item-page': route === 'work'}">
             <router-link to="/" class="top-menu__home">
