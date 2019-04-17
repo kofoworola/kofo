@@ -51,6 +51,17 @@
   }
 }
 
+@keyframes slide-fade-in-left{
+  0%{
+    @include prefix(transform,translateX(-150px),webkit);
+    opacity: 0.4;
+  }
+  100%{
+    @include prefix(transform,translateX(0),webkit);
+    opacity: 1;
+  }
+}
+
 @keyframes fade-in {
   0%{
     opacity: 0;
