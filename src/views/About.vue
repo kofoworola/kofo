@@ -8,11 +8,14 @@
               </p>
           </div>
           <div class="about-section__image">
-              <canvas></canvas>
+              <about-model></about-model>
           </div>
       </div>
   </div>
 </template>
 <script>
-
+    import AboutModel from "../components/AboutModel";
+    export default {
+        components: {AboutModel}
+    }
 </script>
