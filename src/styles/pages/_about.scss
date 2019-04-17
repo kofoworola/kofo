@@ -1,4 +1,30 @@
-.about{
+.about {
   background-color: black;
   min-height: 100vh;
+
+  .about-section {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+
+    .about-section__text-content {
+      width: 40%;
+
+      .title {
+        font-size: 2.5em;
+        font-family: $font-secondary;
+      }
+      .content{
+        font-size: 1em;
+      }
+    }
+    .about-section__image{
+      width: 60%;
+      canvas{
+        width: 100%;
+        height: 400px;
+      }
+    }
+  }
 }
