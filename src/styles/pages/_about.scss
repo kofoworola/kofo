@@ -2,20 +2,20 @@
   background-color: black;
   min-height: 100vh;
 
+  .title {
+    font-size: 2.5em;
+    font-family: $font-secondary;
+  }
+
   .about-section {
     display: flex;
-    height: 100vh;
+    height: 95vh;
     justify-content: space-around;
     align-items: center;
 
     .about-section__text-content {
       width: 50%;
       padding: 0 70px;
-      .title {
-        font-size: 2.5em;
-        font-family: $font-secondary;
-      }
-
       .content {
         font-size: 1.2em;
         letter-spacing: 0.2em;
@@ -26,8 +26,19 @@
     .about-section__image {
       width: 50%;
       height: 100%;
-      background: url(../assets/backgrounds/about.jpg) no-repeat center /cover fixed;
-      filter: grayscale(100%) brightness(50%);
+      background: url(../assets/backgrounds/about.jpg) no-repeat top right/cover ;
+      filter: grayscale(100%) brightness(70%);
+    }
+  }
+  .skills-section{
+    display: flex;
+    .skills-section__content{
+      width: 50%;
+      padding: 30px;
+    }
+    .skills-section__skills{
+      width: 50%;
+      background-color: #d9d9d9;
     }
   }
 }

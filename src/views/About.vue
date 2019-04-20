@@ -4,13 +4,20 @@
           <div class="about-section__image">
           </div>
           <div class="about-section__text-content">
-              <h1 class="title">About me? I'm flattered</h1>
+              <h1 class="title">About Me? I'm Flattered</h1>
               <p class="content">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
               </p>
           </div>
       </div>
-      <div class="skills-section"></div>
+      <div class="skills-section">
+          <div class="skills-section__content">
+              <h1 class="title">
+                  I Have Some Skill
+              </h1>
+          </div>
+          <div class="skills-section__skills"></div>
+      </div>
   </div>
 </template>
 <script>
