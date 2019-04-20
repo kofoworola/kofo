@@ -31,11 +31,22 @@
       margin-bottom: 30px;
       letter-spacing: 1.2em;
       font-family: $font-accent;
+
+      @include respond-to(handhelds){
+        font-size: 1.2em;
+        text-align: center;
+        letter-spacing: 1em;
+      }
     }
     .home-content__about{
       font-size: 1.8em;
       font-family: $font-secondary;
       animation: fade-in $entry-animation-time $animation-speed-curve;
+
+      @include respond-to(handhelds){
+        font-size: 1em;
+        text-align: center;
+      }
     }
     .typing{
       font-size: 1.8em;
@@ -47,6 +58,10 @@
       border-right: 0.15em solid white ;
       margin: 0 auto;
       animation: typing 4s steps(15, end) infinite, typing-caret .5s step-end infinite;
+      @include respond-to(handhelds){
+        font-size: 1em;
+        text-align: center;
+      }
     }
     .triangle-image{
       position:absolute;
@@ -56,6 +71,9 @@
         height: 100%;
         width: auto;
         margin-bottom: -5px;
+      }
+      @include respond-to(handhelds){
+        height: 90px;
       }
     }
   }

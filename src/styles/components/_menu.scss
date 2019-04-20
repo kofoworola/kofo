@@ -7,6 +7,10 @@
   top: 40%;
   z-index: 9999;
 
+  @include respond-to(handhelds){
+    top: 20px;
+  }
+
   .menu-link {
     width: 200px;
     display: block;
@@ -50,6 +54,21 @@
     &:hover {
       a {
         color: black;
+      }
+    }
+
+    @include respond-to(handhelds){
+      background-image: none;
+      border: none;
+      a{
+        padding: 10px;
+      }
+      &:hover{
+        background-image: none !important;
+        color: white !important;
+        a{
+          color: white !important;
+        }
       }
     }
   }
