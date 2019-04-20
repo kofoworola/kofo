@@ -37,7 +37,8 @@
                     <form>
                         <input placeholder="Thy Email" type="email" name="email"/>
                         <input placeholder="What shall you be called" type="text" name="name"/>
-                        <textarea name="message">Hi, i would like to invite you to my project (PROJECT NAME/URL) or coffee</textarea>
+                        <textarea name="message">Hi, i would like to invite you to my project (PROJECT NAME/URL) or just to get some coffee</textarea>
+                        <button type="submit" class="button">Send</button>
                     </form>
                 </div>
             </div>

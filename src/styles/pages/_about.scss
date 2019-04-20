@@ -57,8 +57,34 @@
       form{
         width: 100%;
         input, textarea{
+          background: transparent;
+          border: solid 3px white;
+          padding: 15px;
           width: 100%;
           display: block;
+          margin-bottom: 20px;
+          box-sizing: border-box;
+          color: white;
+          font-size: 1.2em;
+          font-family: $font-primary;
+          &::placeholder{
+            color: white;
+            font-family: $font-primary;
+            font-size: 1.2em;
+          }
+          &:active,&:hover,&:focus{
+            outline: none;
+          }
+        }
+        textarea{
+          min-height: 200px;
+        }
+        button{
+          background-color: black;
+          &:hover{
+            background-color: white;
+            color: black;
+          }
         }
       }
     }

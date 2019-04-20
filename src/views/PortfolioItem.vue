@@ -6,7 +6,7 @@
             <div class="banner-section__content animate-on-entry">
                 <h4 class="banner__content__title animate-on-entry"><span>Project: </span> {{ project.title }}</h4>
                 <p class="banner__content__excerpt">{{ project.metadata.excerpt}}</p>
-                <a :href="project.metadata.url" target="_blank" class="project-link">Visit Project</a>
+                <a :href="project.metadata.url" target="_blank" class="button">Visit Project</a>
             </div>
         </div>
         <div class="work__content">

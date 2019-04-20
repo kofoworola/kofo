@@ -47,3 +47,21 @@ div{
     align-items: center;
   }
 }
+
+.button {
+  padding: 15px;
+  min-width: 200px;
+  border: solid 2px white;
+  background-color: $color-dark-grey;
+  color: white;
+  text-decoration: none;
+  font-family: $font-primary;
+  text-align: center;
+  transition: all 0.8s;
+  font-size: 1.1em;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
