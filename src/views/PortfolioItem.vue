@@ -2,11 +2,11 @@
     <div class="work" v-if="project !== null">
         <div class="banner-section">
             <div class="banner-section__image"
-                 :style="{ backgroundImage: `url(${project.metadata.image.imgix_url})`}"></div>
+                 :style="{ backgroundImage: `url(${project.image.url})`}"></div>
             <div class="banner-section__content animate-on-entry">
                 <h4 class="banner__content__title animate-on-entry"><span>Project: </span> {{ project.title }}</h4>
-                <p class="banner__content__excerpt">{{ project.metadata.excerpt}}</p>
-                <a :href="project.metadata.url" target="_blank" class="button">Visit Project</a>
+                <p class="banner__content__excerpt">{{ project.excerpt}}</p>
+                <a :href="project.url" target="_blank" class="button">Visit Project</a>
             </div>
         </div>
         <div class="work__content">
@@ -42,7 +42,7 @@
         methods: {
             setProject(project) {
                 this.project = project;
-                this.content_html = (new showdown.Converter()).makeHtml(project.metadata.content);
+                this.content_html = (new showdown.Converter()).makeHtml(project.content);
             },
         }
     }

@@ -1,49 +1,61 @@
 let client = {
     getAllProjects(callback) {
         let query = `{
-                    objectsByType(bucket_slug: "kofo-site", type_slug: "projects") {
-                        _id
+                    allProjects {
+                        id
                         title
                         slug
-                        metafields {
-                            key
-                            value
+                        excerpt
+                        image{
+                        url
                         }
-                        type_slug
                     }
                     }`;
-        fetch('https://graphql.cosmicjs.com/v1', {
+        fetch('https://graphql.datocms.com/', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer 229422e096f5c28920674daaab0342`,
+            },
             body: JSON.stringify({
                 query
             }),
         })
             .then(res => res.json())
             .then(res => {
-                typeof callback == "function" && callback(res.data.objectsByType);
+                typeof callback == "function" && callback(res.data.allProjects);
             }).catch(() => {
             alert("An error occurred");
         });
     },
     getSingleProject(slug, callback) {
         let query = `{
-            object(bucket_slug: "kofo-site", slug: "${slug}") {
-                title
-                content
-                metadata
-            }
+        project(filter: {slug: {eq: "${slug}"}}) {
+        id
+          title
+          content
+          excerpt
+          content
+          image {
+            url
+          }
+         }
          }   `;
-        fetch('https://graphql.cosmicjs.com/v1', {
+        fetch('https://graphql.datocms.com/', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer 229422e096f5c28920674daaab0342`,
+            },
             body: JSON.stringify({
                 query
             }),
         })
             .then(res => res.json())
             .then(res => {
-                typeof callback == "function" && callback(res.data.object);
+                typeof callback == "function" && callback(res.data.project);
             }).catch(() => {
             alert("An error occurred");
         });

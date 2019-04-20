@@ -34,7 +34,7 @@
                 <p class="content">You have two options, look for me the old fashioned way in the area to your left or
                     you could just send a message</p>
                 <div class="form">
-                    <form>
+                    <form action="https://formspree.io/okesolakofo@gmail.com" method="POST" target="_blank">
                         <input placeholder="Thy Email" type="email" name="email"/>
                         <input placeholder="What shall you be called" type="text" name="name"/>
                         <textarea name="message">Hi, i would like to invite you to my project (PROJECT NAME/URL) or just to get some coffee</textarea>

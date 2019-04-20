@@ -3,16 +3,16 @@
         <transition name="works-transition" appear
                     mode="out-in">
             <div class="portfolio-item" v-for="project in projects"
-                 v-if="selected_project_id === project._id && !transition" :key="project._id">
+                 v-if="selected_project_id === project.id && !transition" :key="project.id">
                 <router-link :to="{ name: 'work', params: {slug: project.slug }}"
                              class="section-content">
                     <h4 class="portfolio-item__title">
-                        {{ project.title }}: {{ getMetaField("excerpt",project).value }}
+                        {{ project.title }}: {{ project.excerpt }}
                     </h4>
                 </router-link>
                 <div class="section-image-container">
                     <div class="section-image"
-                         :style="{ backgroundImage: `url(${imageUrl(getMetaField('image',project).value)})`}">
+                         :style="{ backgroundImage: `url(${project.image.url})`}">
                         <div class="overlay"></div>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
             <div class="portfolio-menu" v-if="!transition">
                 <ul>
                     <li v-for="project in projects">
-                        <a href="#" :class="{active: project._id === selected_project_id}"
-                           @click="selected_project_id = project._id">{{ project.title }}</a>
+                        <a href="#" :class="{active: project.id === selected_project_id}"
+                           @click="selected_project_id = project.id">{{ project.title }}</a>
                     </li>
                 </ul>
                 <div class="portfolio-menu__indicator">
@@ -79,7 +79,7 @@
             setProjects(projects) {
                 this.projects = projects;
                 this.project_ids = _.map(projects, item => {
-                    return item._id;
+                    return item.id;
                 });
                 this.selected_project_id = _.first(this.project_ids);
             },
