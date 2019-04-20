@@ -60,6 +60,35 @@ let client = {
             alert("An error occurred");
         });
     },
+    getAbout(callback) {
+        let query = `{
+        about {
+                id
+                about
+                skillstext
+                skills
+                recommendation
+            }
+        }
+        `;
+        fetch('https://graphql.datocms.com/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer 229422e096f5c28920674daaab0342`,
+            },
+            body: JSON.stringify({
+                query
+            }),
+        })
+            .then(res => res.json())
+            .then(res => {
+                typeof callback == "function" && callback(res.data.about);
+            }).catch(() => {
+            alert("An error occurred");
+        });
+    },
 };
 
 export default client;

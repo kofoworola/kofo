@@ -18,12 +18,10 @@
 <script>
     import store from '../store';
     import client from '../apiclient';
-    import helpers from '../mixins/cosmichelpers';
     let showdown = require('showdown');
 
     export default {
         name: "PortfolioItem",
-        mixins: [helpers],
         data() {
             return {
                 project: null,
