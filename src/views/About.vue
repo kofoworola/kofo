@@ -6,7 +6,6 @@
             <div class="about-section__text-content">
                 <h1 class="title">About Me? I'm Flattered</h1>
                 <p class="content" v-html="about_content">
-
                 </p>
             </div>
         </div>
@@ -15,7 +14,7 @@
                 <h1 class="title">
                     I Have Some Skill
                 </h1>
-                <p class="content"v-html="skillstext"></p>
+                <p class="content" v-html="skillstext"></p>
                 <h1 class="title recommendation-title">Recommendations</h1>
                 <div class="recommendation" v-for="recommendation in recommendations">
                     <p class="comment">"{{ recommendation.comment}}"</p>
@@ -34,7 +33,7 @@
                 <h1 class="title">
                     Want To Reach Me?
                 </h1>
-                <p class="content">You have two options, look for me the old fashioned way in the area to your left or
+                <p class="content">You have two options, look for me the old fashioned way in the area in the map :) or
                     you could just send a message</p>
                 <div class="form">
                     <form action="https://formspree.io/okesolakofo@gmail.com" method="POST" target="_blank">

@@ -3,30 +3,33 @@
   min-height: 100vh;
 
   .title {
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: $font-secondary;
   }
 
   .content {
-    font-size: 1.2em;
+    font-size: 1em;
     letter-spacing: 0.2em;
     line-height: 1.5em;
   }
 
   .about-section {
     display: flex;
-    height: 95vh;
+    min-height: 90vh;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
 
     .about-section__text-content {
       width: 50%;
       padding: 0 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
     }
 
     .about-section__image {
       width: 50%;
-      height: 100%;
       background: url(../assets/backgrounds/about.jpg) no-repeat top right/cover;
       filter: grayscale(100%) brightness(70%);
     }
@@ -45,14 +48,14 @@
         }
       }
       .content{
-        font-size: 1.3em;
+        font-size: 1em;
       }
 
       .recommendation {
         margin-top: 30px;
 
         .comment {
-          font-size: 1.1em;
+          font-size: 1em;
           font-family: $font-primary;
           text-align: center;
           letter-spacing: 0.2em;
@@ -78,37 +81,44 @@
 
   .contact-section {
     display: flex;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    align-items: stretch;
 
     .contact-section__map {
       width: 50%;
-      height: 100%;
     }
 
     .contact-section__content {
       width: 50%;
       padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      .content{
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
 
       form {
         width: 100%;
 
         input, textarea {
           background: transparent;
-          border: solid 3px white;
-          padding: 15px;
+          border: solid 2px white;
+          padding: 10px;
           width: 100%;
           display: block;
           margin-bottom: 20px;
           box-sizing: border-box;
           color: white;
-          font-size: 1.2em;
+          font-size: 1em;
           font-family: $font-primary;
 
           &::placeholder {
             color: white;
             font-family: $font-primary;
-            font-size: 1.2em;
+            font-size: 1em;
           }
 
           &:active, &:hover, &:focus {
