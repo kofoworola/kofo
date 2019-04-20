@@ -16,13 +16,15 @@
                   I Have Some Skill
               </h1>
           </div>
-          <div class="skills-section__skills"></div>
+          <div class="skills-section__skills">
+              <skill-chart></skill-chart>
+          </div>
       </div>
   </div>
 </template>
 <script>
-    import AboutModel from "../components/AboutModel";
+    import SkillChart from "../components/SkillChart";
     export default {
-        components: {AboutModel}
+        components: {SkillChart}
     }
 </script>
