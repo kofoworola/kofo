@@ -184,7 +184,7 @@
             initMap() {
                 this.map = new google.maps.Map(this.$refs.map, {
                     center: {lat: 6.525085, lng: 3.380619},
-                    zoom: 12,
+                    zoom: 11,
                     styles: this.styling,
                 });
                 let center =  new google.maps.Circle({
