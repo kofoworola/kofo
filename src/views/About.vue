@@ -16,13 +16,19 @@
                 </h1>
                 <p class="content" v-html="skillstext"></p>
                 <h1 class="title recommendation-title">Recommendations</h1>
-                <div class="recommendation" v-for="recommendation in recommendations">
-                    <p class="comment">"{{ recommendation.comment}}"</p>
-                    <p class="person-title">{{ recommendation.title}}</p>
+                <div v-view.once="showRecommendation" style="padding: 5px 0">
+                    <transition name="bounce">
+                        <div v-if="recommendationVisible">
+                            <div class="recommendation" v-for="recommendation in recommendations">
+                                <p class="comment">"{{ recommendation.comment}}"</p>
+                                <p class="person-title">{{ recommendation.title}}</p>
+                            </div>
+                        </div>
+                    </transition>
                 </div>
             </div>
             <div class="skills-section__skills">
-                <skill-chart></skill-chart>
+                <skill-chart :skills="skills"></skill-chart>
             </div>
         </div>
         <div class="contact-section">
@@ -35,14 +41,18 @@
                 </h1>
                 <p class="content">You have two options, look for me the old fashioned way in the area in the map :) or
                     you could just send a message</p>
-                <div class="form">
-                    <form action="https://formspree.io/okesolakofo@gmail.com" method="POST" target="_blank">
-                        <input placeholder="Thy Email" type="email" name="email"/>
-                        <input placeholder="What shall you be called" type="text" name="name"/>
-                        <textarea name="message">Hi, i would like to invite you to my project (PROJECT NAME/URL) or just to get some coffee</textarea>
-                        <button type="submit" class="button">Send</button>
-                    </form>
+                <div class="form" v-view.once="showForm">
+                    <transition name="bounce">
+                        <form action="https://formspree.io/okesolakofo@gmail.com" method="POST" target="_blank"
+                              v-if="formVisible">
+                            <input placeholder="Thy Email" type="email" name="email"/>
+                            <input placeholder="What shall you be called" type="text" name="name"/>
+                            <textarea name="message">Hi, i would like to invite you to my project (PROJECT NAME/URL) or just to get some coffee</textarea>
+                            <button type="submit" class="button">Send</button>
+                        </form>
+                    </transition>
                 </div>
+
             </div>
         </div>
     </div>
@@ -52,15 +62,19 @@
     import ContactMap from "../components/ContactMap";
     import store from '../store';
     import client from '../apiclient';
+
     let showdown = require('showdown');
 
     export default {
         components: {ContactMap, SkillChart},
-        data(){
+        data() {
             return {
                 about_content: "",
                 recommendations: null,
                 skillstext: "",
+                formVisible: false,
+                recommendationVisible: false,
+                skills: {},
             }
         },
         beforeRouteEnter(to, from, next) {
@@ -71,10 +85,21 @@
             });
         },
         methods: {
-            setAbout(content){
+            setAbout(content) {
                 this.about_content = (new showdown.Converter()).makeHtml(content.about);
                 this.recommendations = content.recommendation;
                 this.skillstext = content.skillstext;
+                this.skills = content.skills;
+            },
+            showForm(e) {
+                if (e.percentInView > 0) {
+                    this.formVisible = true;
+                }
+            },
+            showRecommendation(e) {
+                if (e.percentInView > 0) {
+                    this.recommendationVisible = true;
+                }
             }
         }
     }

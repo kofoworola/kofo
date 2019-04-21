@@ -1,5 +1,6 @@
 <template>
-    <canvas ref="canvas" height="200"></canvas>
+    <canvas ref="canvas" height="200"
+        v-view.once="sayHello"></canvas>
 </template>
 
 <script>
@@ -7,25 +8,15 @@
 
     export default {
         name: "SkillChart",
+        props: ['skills'],
         data() {
             return {
                 chart: null,
-                dataset: {
-                    html: 100,
-                    node: 70,
-                    laravel: 90,
-                    golang: 60,
-                    vue: 90,
-                    java: 80,
-                }
             }
-        },
-        mounted() {
-            this.setChart();
         },
         computed: {
             dataObject() {
-                let labels = _.map(_.keys(this.dataset), item => {
+                let labels = _.map(_.keys(this.skills), item => {
                     return item.toUpperCase();
                 });
                 return {
@@ -36,26 +27,14 @@
                             backgroundColor: 'rgb(160, 160, 160, 0.5)',
                             borderColor: 'rgb(43, 43, 43)',
                             pointBackgroundColor: 'rgb(43, 43, 43)',
-                            data: _.values(this.dataset),
+                            data: _.values(this.skills),
                         }]
 
                 };
             }
         },
-        watch: {
-            dataset: {
-                handler() {
-                    this.chart.data = this.dataObject;
-                    this.chart.update();
-                },
-                deep: true,
-            }
-        },
         methods: {
             setChart() {
-                let labels = _.map(_.keys(this.dataset), item => {
-                    return item.toUpperCase();
-                });
                 let context = this.$refs.canvas.getContext('2d');
                 this.chart = new Chart(context, {
                     type: 'radar',
@@ -91,6 +70,11 @@
                         }
                     }
                 });
+            },
+            sayHello(e){
+                if( e.percentInView > 0){
+                   this.setChart();
+                }
             }
         }
     }
