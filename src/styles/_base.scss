@@ -1,12 +1,13 @@
-body{
+body {
   margin: 0 !important;
   color: #e9e9e9;
   font-family: $font-primary;
 }
 
-#app{
+#app {
   overflow-x: hidden;
-  .page{
+
+  .page {
     position: absolute;
     top: 0;
     left: 0;
@@ -14,23 +15,24 @@ body{
   }
 }
 
-.inline{
+.inline {
   display: inline;
 }
 
-div{
+div {
   box-sizing: border-box;
 }
 
-.animate-on-entry{
+.animate-on-entry {
   visibility: hidden;
   animation-delay: $page-transition-time !important;
-  &.show{
+
+  &.show {
     visibility: visible;
   }
 }
 
-.loading{
+.loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,12 +41,18 @@ div{
   z-index: 999999;
   overflow: hidden;
   background-color: white;
-  .holder{
-     height: 100vh;
+
+  .holder {
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    img{
+      max-height: 300px;
+      max-width: 100%;
+      animation: pulse 4s infinite ease-in-out;
+    }
   }
 }
 

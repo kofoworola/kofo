@@ -9,7 +9,7 @@
         <transition name="loader-transition">
             <div class="loading" v-if="loading">
                 <div class="holder">
-                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png"/>
+                    <img src="./assets/logo_black.png"/>
                 </div>
             </div>
         </transition>
