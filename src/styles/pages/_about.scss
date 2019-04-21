@@ -5,12 +5,20 @@
   .title {
     font-size: 2em;
     font-family: $font-secondary;
+
+    @include media-query(small) {
+      font-size: 1.5em;
+    }
   }
 
   .content {
     font-size: 1em;
     letter-spacing: 0.2em;
     line-height: 1.5em;
+    @include media-query(small) {
+      font-size: 0.8em;
+      letter-spacing: 0.1em;
+    }
   }
 
   .about-section {
@@ -33,6 +41,18 @@
       background: url(../assets/backgrounds/about.jpg) no-repeat top right/cover;
       filter: grayscale(100%) brightness(70%);
     }
+
+    @include media-query(small) {
+      display: block;
+      .about-section__image {
+        width: 100%;
+        height: 40vh;
+      }
+      .about-section__text-content {
+        width: 100%;
+        padding: 20px 12px;
+      }
+    }
   }
 
   .skills-section {
@@ -41,13 +61,16 @@
     .skills-section__content {
       width: 50%;
       padding: 60px;
-      .title{
+
+      .title {
         text-align: center;
-        &.recommendation-title{
+
+        &.recommendation-title {
           margin-top: 50px;
         }
       }
-      .content{
+
+      .content {
         font-size: 1em;
       }
 
@@ -77,6 +100,33 @@
       display: flex;
       align-items: center;
     }
+
+    @include media-query(small) {
+      flex-direction: column-reverse;
+      .skills-section__skills {
+        width: 100%;
+      }
+      .skills-section__content {
+        width: 100%;
+        padding: 20px 12px;
+
+        .content {
+          font-size: 0.8em;
+        }
+
+        .recommendation {
+          margin-top: 50px;
+
+          .comment {
+            font-size: 0.8em;
+          }
+
+          .person-title {
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
   }
 
   .contact-section {
@@ -95,7 +145,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
-      .content{
+
+      .content {
         margin-bottom: 20px;
         margin-top: 0;
       }
@@ -124,6 +175,13 @@
           &:active, &:hover, &:focus {
             outline: none;
           }
+          @include media-query(small){
+            font-size: 0.8em;
+            padding: 7px;
+            &::placeholder{
+              font-size: 0.8em;
+            }
+          }
         }
 
         textarea {
@@ -137,7 +195,26 @@
             background-color: white;
             color: black;
           }
+
+          @include media-query(small){
+            font-size: 0.8em;
+            padding: 10px;
+            min-width: 100px;
+          }
         }
+      }
+    }
+
+    @include media-query(small) {
+      flex-direction: column;
+      .contact-section__map{
+        width: 100%;
+        height: 70vh;
+      }
+      .contact-section__content{
+        width: 100%;
+        padding: 20px 12px;
+
       }
     }
   }

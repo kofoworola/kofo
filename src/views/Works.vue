@@ -66,7 +66,7 @@
                 let step = 100 / this.projects.length;
                 let height = (step).toString() + "%";
                 let position = _.findIndex(this.projects, item => {
-                    return item._id === this.selected_project_id;
+                    return item.id === this.selected_project_id;
                 });
                 let top = `${position * step}%`;
                 return {height, top};
