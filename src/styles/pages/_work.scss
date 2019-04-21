@@ -53,6 +53,27 @@
       }
     }
 
+    @include media-query(small){
+      .banner-section__content{
+        padding: 20px;
+        margin-left: 10px;
+        max-width: 300px;
+        .banner__content__title{
+          font-size: 1.3em;
+          letter-spacing: 0.1em;
+        }
+        .banner__content__excerpt{
+          margin: 20px 0;
+          font-size: 0.8em;
+        }
+        .button{
+          font-size: 0.8em;
+          padding: 10px;
+          min-width: 100px;
+        }
+      }
+    }
+
   }
 
   .work__content {

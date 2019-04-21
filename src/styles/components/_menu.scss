@@ -7,7 +7,7 @@
   top: 40%;
   z-index: 9999;
 
-  @include respond-to(handhelds){
+  @include media-query(small){
     top: 20px;
   }
 
@@ -44,7 +44,7 @@
       padding: 20px 30px;
       font-family: $font-secondary;
       text-align: center;
-      font-size: large;
+      font-size: 1.2em;
       font-weight: bold;
       color: white;
       text-decoration: none;
@@ -57,11 +57,12 @@
       }
     }
 
-    @include respond-to(handhelds){
+    @include media-query(small){
       background-image: none;
       border: none;
       a{
         padding: 10px;
+        font-size: 1em;
       }
       &:hover{
         background-image: none !important;
@@ -120,6 +121,20 @@
   &.white {
     .top-menu__link {
       color: black;
+    }
+  }
+
+  @include media-query(small){
+    .top-menu__home{
+      margin-right: 70px;
+      height: 30px;
+      &::after{
+        width: 40px;
+        margin-left: 10px;
+      }
+    }
+    .top-menu__link{
+      font-size: 1em;
     }
   }
 }
@@ -183,5 +198,18 @@
         }
       }
     }
+
+    @include media-query(small){
+      font-size: 0.9em;
+      .back-button{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @include media-query(small){
+    left: 10px;
   }
 }
