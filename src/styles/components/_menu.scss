@@ -19,6 +19,7 @@
     text-align: center;
     border: solid $color-border-grey 1px;
     background-size: 200% 100%;
+    transition: all 0.8s;
 
     &:first-child {
       background-image: linear-gradient(to right, white 50%, black 50%);

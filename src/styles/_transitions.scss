@@ -93,3 +93,14 @@
     transform: translateY(150%);
   }
 }
+
+/*
+******* BOUNCE ANIMATION**********
+ */
+.bounce-enter-active,.bounce-leave-active{
+  transition: all 0.6s cubic-bezier(0,.69,.35,1.4);
+}
+
+.bounce-enter, .bounce-leave-to{
+  transform: scale(0);
+}
