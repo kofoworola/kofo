@@ -1,9 +1,7 @@
 @keyframes typing {
-  from, 70%, to {
+  from,to{ width: 0}
+  30%,60% {
     width: 100%
-  }
-  30% {
-    width: 0
   }
 }
 
