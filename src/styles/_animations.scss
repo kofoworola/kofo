@@ -1,9 +1,7 @@
 @keyframes typing {
-  from,70%,to {
+  from,to{ width: 0}
+  30%,60% {
     width: 100%
-  }
-  30% {
-    width: 0
   }
 }
 
@@ -40,34 +38,46 @@
   }
 }
 
-@keyframes slide-fade-in-up{
-  0%{
-    @include prefix(transform,translateY(-150px),webkit);
+@keyframes slide-fade-in-up {
+  0% {
+    @include prefix(transform, translateY(-150px), webkit);
     opacity: 0.4;
   }
-  100%{
-    @include prefix(transform,translateY(0),webkit);
+  100% {
+    @include prefix(transform, translateY(0), webkit);
     opacity: 1;
   }
 }
 
-@keyframes slide-fade-in-left{
-  0%{
-    @include prefix(transform,translateX(-150px),webkit);
+@keyframes slide-fade-in-left {
+  0% {
+    @include prefix(transform, translateX(-150px), webkit);
     opacity: 0.4;
   }
-  100%{
-    @include prefix(transform,translateX(0),webkit);
+  100% {
+    @include prefix(transform, translateX(0), webkit);
     opacity: 1;
   }
 }
 
 @keyframes fade-in {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1)
   }
 }
 
