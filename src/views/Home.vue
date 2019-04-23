@@ -34,7 +34,7 @@
                     "wannabe model",
                     "more..."
                 ],
-                current:0,
+                current: 0,
             }
         },
         computed: {
@@ -45,7 +45,11 @@
         methods: {
             iteration(param) {
                 if (param.animationName === "typing") {
-                    this.current++;
+                    if (this.current === this.personalities.length) {
+                        this.current = 0;
+                    } else {
+                        this.current++;
+                    }
                 }
             }
         }
