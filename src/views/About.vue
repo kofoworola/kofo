@@ -39,9 +39,9 @@
                 <h1 class="title">
                     Want To Reach Me?
                 </h1>
-                <p class="content">You have two options, look for me the old fashioned way in the area in the map :) or
-                    you could just send a message</p>
-                <div class="form" v-view.once="showForm">
+                <p class="content" v-view.once="showForm">You have two options, look for me the old fashioned way in the area in the map :) or
+                    you could just send a message to <a href="mailto:okesolakofo@gmail.com">okesolakofo@gmail.com</a> or use the contact form below</p>
+                <div class="form">
                     <transition name="bounce">
                         <form action="https://formspree.io/okesolakofo@gmail.com" method="POST" target="_blank"
                               v-if="formVisible">
