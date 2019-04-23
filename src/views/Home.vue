@@ -45,7 +45,7 @@
         methods: {
             iteration(param) {
                 if (param.animationName === "typing") {
-                    if (this.current === this.personalities.length) {
+                    if (this.current === this.personalities.length-1) {
                         this.current = 0;
                     } else {
                         this.current++;
