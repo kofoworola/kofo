@@ -52,7 +52,6 @@
                         </form>
                     </transition>
                 </div>
-
             </div>
         </div>
     </div>

@@ -40,6 +40,7 @@ let client = {
           image {
             url
           }
+          url
          }
          }   `;
         fetch('https://graphql.datocms.com/', {
