@@ -31,7 +31,7 @@
                     "part time geek",
                     "terrible gamer",
                     "slightly terrible cook",
-                    "aspiring vloger",
+                    "aspiring vlogger",
                     "wannabe model",
                     "more..."
                 ],
