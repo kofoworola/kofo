@@ -15,6 +15,7 @@
             <div class="home__social">
                 <a href="https://twitter.com/yoruba_dev" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="https://github.com/kofoworola" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://medium.com/@okesolakofo" target="_blank"><i class="fab fa-medium"></i></a>
             </div>
         </div>
     </div>
