@@ -101,6 +101,9 @@
       display: block;
     }
 
+    a{
+      color: white;
+    }
     @include media-query(small){
       h1{
         font-size: 1.5em;
