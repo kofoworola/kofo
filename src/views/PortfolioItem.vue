@@ -40,6 +40,7 @@
         methods: {
             setProject(project) {
                 this.project = project;
+                showdown.setOption('openLinksInNewWindow',true);
                 this.content_html = (new showdown.Converter()).makeHtml(project.content);
             },
         }
